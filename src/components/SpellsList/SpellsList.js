@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './SpellsList.css';
 
 function SpellsList() {
   const [spells, setSpells] = useState([]);
@@ -18,11 +19,22 @@ function SpellsList() {
   };
 
   return (
-    <div>
+    <div className="spells-list">
       <h2>Spells List</h2>
       <ul>
         {spells.map(spell => (
-          <li key={spell.id}>{spell.name}</li>
+          <li key={spell.id} className="spell-item">
+            <div className="spell-name">{spell.name}</div>
+            <div className="spell-details">
+              <span>School:</span> {spell.school}
+            </div>
+            <div className="spell-details">
+              <span>Accuracy:</span> {spell.accuracy}
+            </div>
+            <div className="spell-details">
+              <span>Damage:</span> {spell.damage}
+            </div>
+          </li>
         ))}
       </ul>
     </div>
