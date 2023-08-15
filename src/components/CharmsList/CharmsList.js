@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import './CharmsList.css';
+import CardListItem from '../CardListItem/CardListItem';
 
 function CharmsList() {
   const [charms, setCharms] = useState([]);
+  const charmAttributes = ['school', 'pips', 'percentage'];
 
   useEffect(() => {
     fetchCharms();
@@ -24,22 +24,7 @@ function CharmsList() {
       <h2>Charms List</h2>
       <ul>
         {charms.map(charm => (
-          <li key={charm.id} className="charm-item">
-            <div className="charm-name">
-              <Link to={`/charms/${charm.id}`} className='charm-link'>
-                {charm.name}
-              </Link>
-            </div>
-            <div className="charm-details">
-              <span>School:</span> {charm.school}
-            </div>
-            <div className="charm-details">
-              <span>Effect:</span> {charm.percentage}
-            </div>
-            <div className="charm-details">
-              <span>Pips:</span> {charm.pips}
-            </div>
-          </li>
+          <CardListItem key={charm.id} item={charm} basePath="/charms" attributes={charmAttributes} />
         ))}
       </ul>
     </div>

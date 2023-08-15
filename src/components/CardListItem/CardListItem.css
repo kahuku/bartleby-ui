@@ -1,0 +1,27 @@
+/* Common styles for Spells and Charms */
+.item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    list-style: none;
+  }
+  
+  .item-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .item-details {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  /* Additional specific styles for Spells */
+  .spells-list {
+  }
+  
+  /* Additional specific styles for Charms */
+  .charms-list {
+  }
