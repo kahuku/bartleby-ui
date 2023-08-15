@@ -1,5 +1,10 @@
 # Getting Started with Create React App
 
+TODO:
+Use ENV variables on fetches
+Make a better UI
+Pass data if possible to reduce API calls
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

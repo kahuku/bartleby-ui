@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './SpellsList.css';
 
 function SpellsList() {
@@ -10,7 +11,7 @@ function SpellsList() {
 
   const fetchSpells = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:3000/spells'); // Replace with your backend endpoint
+      const response = await fetch('http://127.0.0.1:3000/spells'); // TODO: Replace with your backend endpoint
       const data = await response.json();
       setSpells(data);
     } catch (error) {
@@ -24,7 +25,14 @@ function SpellsList() {
       <ul>
         {spells.map(spell => (
           <li key={spell.id} className="spell-item">
-            <div className="spell-name">{spell.name}</div>
+            <div className="spell-name">
+                <Link
+                    to={`/spells/${spell.id}`} 
+                    className='spell-link'
+                >
+                    {spell.name}
+                </Link>
+            </div>
             <div className="spell-details">
               <span>School:</span> {spell.school}
             </div>

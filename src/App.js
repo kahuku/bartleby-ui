@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Content from './components/Content/Content';
 import Footer from './components/Footer/Footer';
-import SpellsList from './components/SpellsList/SpellsList'; // Import the SpellsList component
+import SpellsList from './components/SpellsList/SpellsList';
+import SpellDetails from './components/SpellDetails/SpellDetails';
 import './App.css'; // Import any styles if needed
 
 function App() {
@@ -11,9 +12,10 @@ function App() {
     <Router>
       <div className="app">
         <Header />
-        <Routes> {/* Use Routes instead of Switch */}
+        <Routes>
           <Route path="/" element={<Content />} />
-          <Route path="/spells" element={<SpellsList />} /> {/* Use element prop */}
+          <Route path="/spells" element={<SpellsList />} />
+          <Route path="/spells/:spellId" element={<SpellDetails />} />
         </Routes>
         <Footer />
       </div>
