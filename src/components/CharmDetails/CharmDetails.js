@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import './CharmDetails.css';
+import CardDetails from '../CardDetails/CardDetails';
 
 function CharmDetails() {
-  const { charmId } = useParams();
+  const charmId = useParams().charmId;
   const [charm, setCharm] = useState(null);
+  const charmAttributes = ['school', 'percentage', 'pips']
 
   useEffect(() => {
     fetchCharmDetails();
@@ -16,29 +17,18 @@ function CharmDetails() {
       const data = await response.json();
       setCharm(data);
     } catch (error) {
-      console.error('Error fetching charm details:', error);
+      console.error('Error fetching spell details:', error);
     }
-  };
+  }
 
   if (!charm) {
-    return <div>Loading charm details...</div>;
+    return <div>Loading charm details...</div>
   }
 
   return (
-    <div className="charm-details-container">
+    <div>
       <h2>Charm Details</h2>
-      <div className="charm-detail">
-        <span className="detail-label">Name:</span> {charm.name}
-      </div>
-      <div className="charm-detail">
-        <span className="detail-label">School:</span> {charm.school}
-      </div>
-      <div className="charm-detail">
-        <span className="detail-label">Effect:</span> {charm.percentage}
-      </div>
-      <div className="charm-detail">
-        <span className="detail-label">Pips:</span> {charm.pips}
-      </div>
+      <CardDetails item={charm} attributes={charmAttributes} />
     </div>
   );
 }

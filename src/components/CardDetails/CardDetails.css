@@ -1,0 +1,24 @@
+.card-details-container {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px 0;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+  }
+  
+  .card-details-container h2 {
+    margin-top: 0;
+  }
+  
+  .card-detail {
+    margin-bottom: 8px;
+  }
+
+  .card-detail-label {
+    font-weight: bold;
+  }
+
+  .card-detail-value {
+    margin-left: 8px;
+  }
+  

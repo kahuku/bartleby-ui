@@ -3,7 +3,7 @@ import CardListItem from '../CardListItem/CardListItem';
 
 function CharmsList() {
   const [charms, setCharms] = useState([]);
-  const charmAttributes = ['school', 'pips', 'percentage'];
+  const charmAttributes = ['school', 'percentage', 'pips'];
 
   useEffect(() => {
     fetchCharms();

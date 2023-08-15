@@ -3,7 +3,7 @@ import CardListItem from '../CardListItem/CardListItem';
 
 function SpellsList() {
   const [spells, setSpells] = useState([]);
-  const spellAttributes = ['school', 'pips', 'damage', 'accuracy'];
+  const spellAttributes = ['school', 'damage', 'accuracy', 'pips'];
 
   useEffect(() => {
     fetchSpells();
